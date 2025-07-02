@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages</title>
+  </head>
+  <body>
+    <h1>Welcome to your message board</h1>
+    <a href="/new" class="a-form-redirect">Write a new message</a>
+    <h3>Messages</h3>
+    <ul>
+      <% messages.forEach((message) => { %>
+      <li>
+        <a href="/message/<%=message.id%>">
+          <strong><%= message.user %>:</strong> <%= message.text %>
+        </a>
+        <br />
+        <small><%= message.added.toLocaleString() %></small>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
